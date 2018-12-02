@@ -1,0 +1,516 @@
+variable names can contain only letters, numbers, and underscores.
+They can start with a letter or an underscore, but not with a number.
+For instance, you can call a variable message_1 but not 1_message.
+Spaces are not allowed in variable names, but underscores can be used
+to separate words in variable names. For example, greeting_message works,
+but greeting message will cause errors.
+Avoid using Python keywords and function names as variable names;
+that is, do not use words that Python has reserved for a particular programmatic
+purpose, such as the word print. (See “Python Keywords
+and Built-in Functions” on page 489.)
+Variable names should be short but descriptive. For example, name is
+better than n, student_name is better than s_n, and name_length is better
+than length_of_persons_name.
+Be careful when using the lowercase letter l and the uppercase letter O
+because they could be confused with the numbers 1 and 0.
+The Python variables you’re using at this point should be lowercase. You won’t get
+errors if you use uppercase letters, but it’s a good idea to avoid using them for now
+how to remove white spaces
+favorite_language = ' python '
+>>>> favorite_language.rstrip()
+' python'
+w >>> favorite_language.lstrip()
+'python '
+x >>> favorite_language.strip()
+
+Your editor’s syntax highlighting feature should help you spot some syntax errors
+quickly as you write your programs. If you see Python code highlighted as if it’s
+English or English highlighted as if it’s Python code, you probably have a mismatched
+quotation mark somewhere in your file.
+
+Accessing Elements in a List
+Lists are ordered collections, so you can access any element in a list by
+telling Python the position, or index, of the item desired. To access an element
+in a list, write the name of the list followed by the index of the item
+enclosed in square brackets.
+
+Index Positions Start at 0, Not 1
+Python considers the first item in a list to be at position 0, not position 1.
+This is true of most programming languages, and the reason has to do with
+how the list operations are implemented at a lower level. If you’re receiving
+unexpected results, determine whether you are making a simple off-by-one
+error
+Del or pop() method.
+Remember that each time you use pop(), the item you work with is no
+longer stored in the list.
+If you’re unsure whether to use the del statement or the pop() method,
+here’s a simple way to decide: when you want to delete an item from a list
+and not use that item in any way, use the del statement; if you want to use an
+item as you remove it, use the pop() method.
+
+The remove() method deletes only the first occurrence of the value you specify. If there’s
+a possibility the value appears more than once in the list, you’ll need to use a loop to
+determine if all occurrences of the value have been removed. You’ll learn how to do
+this in Chapter 7.
+
+Sorting a List Permanently with the sort() Method
+Python’s sort() method makes it relatively easy to sort a list. Imagine we
+have a list of cars and want to change the order of the list to store them
+alphabetically. To keep the task simple, let’s assume that all the values in
+the list are lowercase.
+Sorting a List Temporarily with the sorted() Function
+To maintain the original order of a list but present it in a sorted order, you
+can use the sorted() function. The sorted() function lets you display your list
+in a particular order but doesn’t affect the actual order of the list.
+Let’s try this function on the list of cars.
+
+Notice that the list still exists in its original order at x after the sorted()
+function has been used. The sorted() function can also accept a reverse=True
+argument if you want to display a list in reverse alphabetical order
+
+Sorting a list alphabetically is a bit more complicated when all the values are not in
+lowercase. There are several ways to interpret capital letters when you’re deciding on
+a sort order, and specifying the exact order can be more complex than we want to deal
+with at this time. However, most approaches to sorting will build directly on what you
+learned in this section.
+
+The reverse() method changes the order of a list permanently, but you
+can revert to the original order anytime by applying reverse() to the same
+list a second time
+
+You’ll find len() useful when you need to identify the number of aliens
+that still need to be shot down in a game, determine the amount of data
+you have to manage in a visualization, or figure out the number of registered
+users on a website, among other tasks.
+N ote Python counts the items in a list starting with one, so you shouldn’t run into any offby-one
+errors when determining the length of a list.
+
+If an index error occurs and you can’t figure out how to resolve it, try printing your
+list or just printing the length of your list. Your list might look much different than
+you thought it did, especially if it has been managed dynamically by your program.
+Seeing the actual list, or the exact number of items in your list, can help you sort out
+such logical errors.
+
+Looping Through an Entire List
+You’ll often want to run through all entries in a list, performing the same
+task with each item. For example, in a game you might want to move every
+element on the screen by the same amount, or in a list of numbers you
+might want to perform the same statistical operation on every element. Or
+perhaps you’ll want to display each headline from a list of articles on a website.
+When you want to do the same action with every item in a list, you can
+use Python’s for loop.
+54 Chapter 4
+Let’s say we have a list of magicians’ names, and we want to print out
+each name in the list. We could do this by retrieving each name from the
+list individually, but this approach could cause several problems. For one,
+it would be repetitive to do this with a long list of names. Also, we’d have to
+change our code each time the list’s length changed. A for loop avoids both
+of these issues by letting Python manage these issues internally.
+Let’s use a for loop to print out each name in a list of magicians:
+
+Using the range() Function
+Python’s range() function makes it easy to generate a series of numbers.
+Using range() to Make a List of Numbers
+If you want to make a list of numbers, you can convert the results of range()
+directly into a list using the list() function. When you wrap list() around a
+call to the range() function, the output will be a list of numbers.
+Slicing a list
+To make a slice, you specify the index of the first and last elements you
+want to work with. As with the range() function, Python stops one item
+before the second index you specify. To output the first three elements
+in a list, you would request indices 0 through 3, which would return elements
+0, 1, and 2
+This syntax allows you to output all of the elements from any point in
+your list to the end regardless of the length of the list. Recall that a negative
+index returns an element a certain distance from the end of a list;
+therefore, you can output any slice from the end of a list. For example, if
+we want to output the last three players on the roster, we can use the slice
+Looping Through a Slice
+You can use a slice in a for loop if you want to loop through a subset of
+the elements in a list.
+
+Copying a List
+Often, you’ll want to start with an existing list and make an entirely new list
+based on the first one. Let’s explore how copying a list works and examine
+one situation in which copying a list is useful.
+To copy a list, you can make a slice that includes the entire original list
+by omitting the first index and the second index ([:]). This tells Python to
+make a slice that starts at the first item and ends with the last item, producing
+a copy of the entire list.
+For example, imagine we have a list of our favorite foods and want to
+make a separate list of foods that a friend likes. This friend likes everything
+in our list so far, so we can create their list by copying ours
+
+The Style Guide
+When someone wants to make a change to the Python language, they write
+a Python Enhancement Proposal (PEP). One of the oldest PEPs is PEP 8, which
+instructs Python programmers on how to style their code. PEP 8 is fairly
+lengthy, but much of it relates to more complex coding structures than
+what you’ve seen so far.
+The Python style guide was written with the understanding that code
+is read more often than it is written. You’ll write your code once and then
+start reading it as you begin debugging. When you add features to a program,
+you’ll spend more time reading your code. When you share your
+code with other programmers, they’ll read your code as well.
+Given the choice between writing code that’s easier to write or code
+that’s easier to read, Python programmers will almost always encourage you
+to write code that’s easier to read. The following guidelines will help you
+write clear code from the start.
+
+Indentation
+PEP 8 recommends that you use four spaces per indentation level. Using
+four spaces improves readability while leaving room for multiple levels of
+indentation on each line.
+In a word processing document, people often use tabs rather than
+spaces to indent. This works well for word processing documents, but the
+Python interpreter gets confused when tabs are mixed with spaces. Every
+text editor provides a setting that lets you use the tab key but then converts
+each tab to a set number of spaces. You should definitely use your tab key,
+but also make sure your editor is set to insert spaces rather than tabs into
+your document.
+Mixing tabs and spaces in your file can cause problems that are very
+difficult to diagnose. If you think you have a mix of tabs and spaces, you
+can convert all tabs in a file to spaces in most editors.
+
+Line Length
+Many Python programmers recommend that each line should be less than
+80 characters. Historically, this guideline developed because most computers
+could fit only 79 characters on a single line in a terminal window.
+Currently, people can fit much longer lines on their screens, but other reasons
+exist to adhere to the 79-character standard line length. Professional
+programmers often have several files open on the same screen, and using
+the standard line length allows them to see entire lines in two or three files
+that are open side by side onscreen. PEP 8 also recommends that you limit
+all of your comments to 72 characters per line, because some of the tools
+that generate automatic documentation for larger projects add formatting
+characters at the beginning of each commented line.
+The PEP 8 guidelines for line length are not set in stone, and some
+teams prefer a 99-character limit. Don’t worry too much about line length
+in your code as you’re learning, but be aware that people who are working
+collaboratively almost always follow the PEP 8 guidelines. Most editors
+allow you to set up a visual cue, usually a vertical line on your screen, that
+shows you where these limits are.
+Note: Appendix B shows you how to configure your text editor so it always inserts four
+spaces each time you press the tab key and shows a vertical guideline to help you
+follow the 79-character limit
+
+Boolean Expressions
+As you learn more about programming, you’ll hear the term Boolean
+expression at some point. A Boolean expression is just another name for a
+conditional test. A Boolean value is either True or False, just like the value
+of a conditional expression after it has been evaluated.
+Boolean values are often used to keep track of certain conditions, such
+as whether a game is running or whether a user can edit certain content on
+a website:
+
+
+if-else Statements
+Often, you’ll want to take one action when a conditional test passes and a different
+action in all other cases. Python’s if-else syntax makes this possible.
+An if-else block is similar to a simple if statement, but the else statement
+allows you to define an action or set of actions that are executed when the
+conditional test fails
+
+The if-elif-else Chain
+Often, you’ll need to test more than two possible situations, and to evaluate
+these you can use Python’s if-elif-else syntax. Python executes only one
+block in an if-elif-else chain. It runs each conditional test in order until
+one passes. When a test passes, the code following that test is executed and
+Python skips the rest of the tests.
+Many real-world situations involve more than two possible conditions.
+For example, consider an amusement park that charges different rates for
+different age groups:
+•	 Admission for anyone under age 4 is free.
+•	 Admission for anyone between the ages of 4 and 18 is $5.
+•	 Admission for anyone age 18 or older is $10.
+
+Using if Statements with Lists
+You can do some interesting work when you combine lists and if statements.
+You can watch for special values that need to be treated differently
+than other values in the list. You can manage changing conditions efficiently,
+such as the availability of certain items in a restaurant throughout a
+shift. You can also begin to prove that your code works as you expect it to in
+all possible situations.
+
+A dictionary in Python is a collection of key-value pairs. Each key is connected
+to a value, and you can use a key to access the value associated with that key.
+A key’s value can be a number, a string, a list, or even another dictionary.
+In fact, you can use any object that you can create in Python as a value in a
+dictionary.
+In Python, a dictionary is wrapped in braces, {}, with a series of keyvalue
+pairs inside the braces, as shown in the earlier example:
+A key-value pair is a set of values associated with each other. When you
+provide a key, Python returns the value associated with that key. Every key
+is connected to its value by a colon, and individual key-value pairs are separated
+by commas. You can store as many key-value pairs as you want in a
+dictionary.
+The simplest dictionary has exactly one key-value pair
+
+Adding New Key-Value Pairs
+Dictionaries are dynamic structures, and you can add new key-value pairs
+to a dictionary at any time. For example, to add a new key-value pair, you
+would give the name of the dictionary followed by the new key in square
+brackets along with the new value.
+
+Modifying Values in a Dictionary
+To modify a value in a dictionary, give the name of the dictionary with the
+key in square brackets and then the new value you want associated with
+that key. For example, consider an alien that changes from green to yellow
+as a game progresses:
+
+Removing Key-Value Pairs
+When you no longer need a piece of information that’s stored in a dictionary,
+you can use the del statement to completely remove a key-value pair.
+All del needs is the name of the dictionary and the key that you want to
+remove.
+
+When you know you’ll need more than one line to define
+a dictionary, press enter after the opening brace. Then indent the next
+line one level (four spaces), and write the first key-value pair, followed by
+a comma. From this point forward when you press enter, your text editor
+should automatically indent all subsequent key-value pairs to match the first
+key-value pair.
+Once you’ve finished defining the dictionary, add a closing brace on a
+new line after the last key-value pair and indent it one level so it aligns with
+the keys in the dictionary. It’s good practice to include a comma after the
+last key-value pair as well, so you’re ready to add a new key-value pair on the
+next line.
+
+For loop for a dictionary:
+
+to write a for loop for a dictionary, you create names for
+the two variables that will hold the key and value in each key-value pair. You
+can choose any names you want for these two variables.
+The second half of the for statement includes the name of the dictionary
+followed by the method items(), which returns a list of key-value pairs.
+The for loop then stores each of these pairs in the two variables provided
+
+Looping through the keys is actually the default behavior when looping
+through a dictionary, so this code would have exactly the same output if you
+wrote . . .
+for name in favorite_languages:
+rather than . . .
+for name in favorite_languages.keys():
+You can choose to use the keys() method explicitly if it makes your code
+easier to read, or you can omit it if you wish.
+You can access the value associated with any key you care about inside
+the loop by using the current key.
+The keys() method isn’t just for looping: It actually returns a list of all
+the keys,
+
+Looping Through a Dictionary’s Keys in Order
+
+A dictionary always maintains a clear connection between each key and
+its associated value, but you never get the items from a dictionary in any
+predictable order. That’s not a problem, because you’ll usually just want
+to obtain the correct value associated with each key.
+One way to return items in a certain order is to sort the keys as they’re
+returned in the for loop. You can use the sorted() function to get a copy of
+the keys in order:
+
+Looping Through All Values in a Dictionary
+
+If you are primarily interested in the values that a dictionary contains,
+you can use the values() method to return a list of values without any keys.
+For example, say we simply want a list of all languages chosen in our programming
+language poll without the name of the person who chose each
+language:
+we can use a set.
+A set is similar to a list except that each item in the set must be unique
+
+Nesting
+
+Sometimes you’ll want to store a set of dictionaries in a list or a list of
+items as a value in a dictionary. This is called nesting. You can nest a set
+of dictionaries inside a list, a list of items inside a dictionary, or even a
+dictionary inside another dictionary. Nesting is a powerful feature, as the
+following examples will demonstrate.
+
+How the input() Function Works
+The input() function pauses your program and waits for the user to enter
+some text. Once Python receives the user’s input, it stores it in a variable to
+make it convenient for you to work with.
+For example, the following program asks the user to enter some text,
+then displays that message back to the user:
+
+We can resolve this issue by using the int() function, which tells
+Python to treat the input as a numerical value. The int() function converts
+a string representation of a number to a numerical representation,
+as shown here:
+
+
+Introducing while Loops
+The for loop takes a collection of items and executes a block of code once
+for each item in the collection. In contrast, the while loop runs as long as,
+or while, a certain condition is true.
+The while Loop in Action
+You can use a while loop to count up through a series of numbers. For
+example, the following while loop counts from 1 to 5:
+
+(The += operator is shorthand for current_number =
+current_number + 1.)
+
+This variable, called a flag, acts as a signal to the program. We
+can write our programs so they run while the flag is set to True and stop running
+when any of several events sets the value of the flag to False. As a result,
+our overall while statement needs to check only one condition: whether or
+not the flag is currently True. Then, all our other tests (to see if an event has
+occurred that should set the flag to False) can be neatly organized in the rest
+of the program
+
+A function call tells
+Python to execute the code in the function. To call a function, you write
+the name of the function, followed by any necessary information in parentheses,
+as shown at x. Because no information is needed here, calling our
+function is as simple as entering greet_user(). As expected, it prints Hello
+
+The variable username in the definition of greet_user() is an example of a
+parameter, a piece of information the function needs to do its job. The value
+'jesse' in greet_user('jesse') is an example of an argument. An argument
+is a piece of information that is passed from a function call to a function.
+When we call the function, we place the value we want the function to work
+with in parentheses. In this case the argument 'jesse' was passed to the
+function greet_user(), and the value was stored in the parameter username.
+
+Positional Arguments
+When you call a function, Python must match each argument in the function
+call with a parameter in the function definition. The simplest way to
+do this is based on the order of the arguments provided. Values matched
+up this way are called positional arguments.
+To see how this works, consider a function that displays information
+about pets. The function tells us what kind of animal each pet is and the
+pet’s name, as shown here:
+
+Keyword Arguments
+A keyword argument is a name-value pair that you pass to a function. You
+directly associate the name and the value within the argument, so when you
+pass the argument to the function, there’s no confusion (you won’t end up
+138 Chapter 8
+with a harry named Hamster). Keyword arguments free you from having
+to worry about correctly ordering your arguments in the function call, and
+they clarify the role of each value in the function call.
+Let’s rewrite pets.py using keyword arguments to call describe_pet():
+When you use keyword arguments, be sure to use the exact names of the parameters in
+the function’s definition
+
+Default Values
+When writing a function, you can define a default value for each parameter.
+If an argument for a parameter is provided in the function call, Python uses
+the argument value. If not, it uses the parameter’s default value. So when
+you define a default value for a parameter, you can exclude the corresponding
+argument you’d usually write in the function call. Using default values
+can simplify your function calls and clarify the ways in which your functions
+are typically used.
+For example, if you notice that most of the calls to describe_pet() are
+being used to describe dogs, you can set the default value of animal_type to
+'dog'. Now anyone calling describe_pet() for a dog can omit that information
+
+Return Values
+A function doesn’t always have to display its output directly. Instead, it can
+process some data and then return a value or set of values. The value the
+function returns is called a return value. The return statement takes a value
+from inside a function and sends it back to the line that called the function.
+Return values allow you to move much of your program’s grunt work into
+functions, which can simplify the body of your program.
+
+Making an Argument Optional
+Sometimes it makes sense to make an argument optional so that people
+using the function can choose to provide extra information only if they
+want to. You can use default values to make an argument optional.
+For example, say we want to expand get_formatted_name() to handle
+middle names as well. A first attempt to include middle names might look
+like this:
+
+Returning a Dictionary
+A function can return any kind of value you need it to, including more complicated
+data structures like lists and dictionaries. For example, the following
+function takes in parts of a name and returns a dictionary representing
+a person
+
+Passing a List
+You’ll often find it useful to pass a list to a function, whether it’s a list of
+names, numbers, or more complex objects, such as dictionaries. When you
+pass a list to a function, the function gets direct access to the contents of
+the list. Let’s use functions to make working with lists more efficient.
+
+Modifying a List in a Function
+When you pass a list to a function, the function can modify the list. Any
+changes made to the list inside the function’s body are permanent, allowing
+you to work efficiently even when you’re dealing with large amounts of data.
+Consider a company that creates 3D printed models of designs that
+users submit. Designs that need to be printed are stored in a list, and after
+being printed they’re moved to a separate list.
+Importing Specific Functions
+You can also import a specific function from a module. Here’s the general
+syntax for this approach:
+from module_name import function_name
+
+You can import as many functions as you want from a module by separating
+each function’s name with a comma:
+from module_name import function_0, function_1, function_2
+
+Using as to Give a Function an Alias
+If the name of a function you’re importing might conflict with an existing
+name in your program or if the function name is long, you can use a
+short, unique alias—an alternate name similar to a nickname for the function.
+You’ll give the function this special nickname when you import the
+function.
+Here we give the function make_pizza() an alias, mp(), by importing
+make_pizza as mp. The as keyword renames a function using the alias you
+provide.
+
+The import statement shown here renames the function make_pizza() to
+mp() in this program. Any time we want to call make_pizza() we can simply
+write mp() instead, and Python will run the code in make_pizza() while avoiding
+any confusion with another make_pizza() function you might have written
+in this program file.
+The general syntax for providing an alias is:
+from module_name import function_name as fn
+
+Using as to Give a Module an Alias
+You can also provide an alias for a module name. Giving a module a short
+alias, like p for pizza, allows you to call the module’s functions more quickly.
+Calling p.make_pizza() is more concise than calling pizza.make_pizza():
+
+The module pizza is given the alias p in the import statement, but all of
+the module’s functions retain their original names. Calling the functions by
+writing p.make_pizza() is not only more concise than writing pizza.make_pizza(),
+but also redirects your attention from the module name and allows you
+to focus on the descriptive names of its functions. These function names,
+which clearly tell you what each function does, are more important to the
+readability of your code than using the full module name.
+The general syntax for this approach is:
+import module_name as mn
+
+Importing All Functions in a Module
+You can tell Python to import every function in a module by using the asterisk
+(*) operator:
+
+The best approach is to import the function or functions you want,
+or import the entire module and use the dot notation. This leads to clear
+code that’s easy to read and understand. I include this section so you’ll
+recognize import statements like the following when you see them in other
+people’s code:
+from module_name import *
+
+Styling Functions
+You need to keep a few details in mind when you’re styling functions.
+Functions should have descriptive names, and these names should use
+lowercase letters and underscores. Descriptive names help you and others
+understand what your code is trying to do. Module names should use these
+conventions as well.
+Every function should have a comment that explains concisely what
+the function does. This comment should appear immediately after the
+function definition and use the docstring format. In a well-documented
+function, other programmers can use the function by reading only the
+description in the docstring. They should be able to trust that the code
+works as described, and as long as they know the name of the function,
+the arguments it needs, and the kind of value it returns, they should be
+able to use it in their programs.
+If you specify a default value for a parameter, no spaces should be used
+on either side of the equal sign:
+def function_name(parameter_0, parameter_1='default value')
+
+The same convention should be used for keyword arguments in function
+calls:
+function_name(value_0, parameter_1='value')
