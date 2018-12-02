@@ -13,3 +13,9 @@ def sit(self):
 def roll_over(self):
     """Simulate rolling over in response to a command."""
     print(self.name.title() + " rolled over!")
+
+
+my_dog = Dog('Wikkie', 6)
+
+print("My dog's name is " + my_dog.name.title() + ".")
+print("My dog is " + str(my_dog.age) + " years old.")
