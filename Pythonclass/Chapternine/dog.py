@@ -7,16 +7,20 @@ class Dog():
     self.age = age
 
     def sit(self):
-        """Simulate a dog sitting in response to a command."""
+     """Simulate a dog sitting in response to a command."""
     print(self.name.title() + " is now sitting.")
 
     def roll_over(self):
-        """Simulate rolling over in response to a command."""
+     """Simulate rolling over in response to a command."""
     print(self.name.title() + " rolled over!")
 
 
 
+
 my_dog = Dog('Wikkie', 6)
+my_dog.sit()
+my_dog.roll_over()
 
 print("My dog's name is " + my_dog.name.title() + ".")
 print("My dog is " + str(my_dog.age) + " years old.")
+my_dog.name
