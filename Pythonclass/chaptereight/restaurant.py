@@ -17,5 +17,24 @@ class Restaurant ():
 restaurant = Restaurant('Hi',' Japanese')
 restaurant.describe_restaurant()
 restaurant.open_restaurant()
+
+print("\nThe restaurant is called :" +  restaurant.restaurant_name.title())
+print("The restaurant serves :" + restaurant.cuisine_type + " cuisine ")
+
+restaurant = Restaurant('Hola', ' Tex-Mex')
+restaurant.describe_restaurant()
+
+print("\nThe restaurant is called :" +  restaurant.restaurant_name.title())
+print("The restaurant serves :" + restaurant.cuisine_type + " cuisine ")
+
+restaurant = Restaurant('LOL', ' Mexican')
+restaurant.describe_restaurant()
+
+print("\nThe restaurant is called :" +  restaurant.restaurant_name.title())
+print("The restaurant serves :" + restaurant.cuisine_type + " cuisine ")
+
+restaurant = Restaurant('Yo', ' American')
+restaurant.describe_restaurant()
+
 print("\nThe restaurant is called :" +  restaurant.restaurant_name.title())
 print("The restaurant serves :" + restaurant.cuisine_type + " cuisine ")
