@@ -587,3 +587,25 @@ a class, you’ll spend most of your time working with instances created from
 that class. One of the first tasks you’ll want to do is modify the attributes
 associated with a particular instance. You can modify the attributes of an
 instance directly or write methods that update attributes in specific ways.
+
+Setting a Default Value for an Attribute
+Every attribute in a class needs an initial value, even if that value is 0 or an
+empty string. In some cases, such as when setting a default value, it makes
+sense to specify this initial value in the body of the __init__() method; if
+you do this for an attribute, you don’t have to include a parameter for that
+attribute.
+Let’s add an attribute called odometer_reading that always starts with a
+value of 0. We’ll also add a method read_odometer() that helps us read each
+car’s odometer:
+
+Modifying Attribute Values
+You can change an attribute’s value in three ways: you can change the value
+directly through an instance, set the value through a method, or increment
+the value (add a certain amount to it) through a method. Let’s look at each
+of these approaches
+
+Modifying an Attribute’s Value Through a Method
+It can be helpful to have methods that update certain attributes for you.
+Instead of accessing the attribute directly, you pass the new value to a
+method that handles the updating internally.
+Here’s an example showing a method called update_odometer():
