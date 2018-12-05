@@ -6,12 +6,21 @@ class User():
      self.last_name  = last_name
      self.age = age
      self.account_id = account_id
+     self.login_attempts = 0
 
     def describe_user(self):
      """Describe user"""
      print(self.first_name.title() + self.last_name.title())
      print(self.age)
      print(self.account_id)
+
+    def increment_login_attempts(self, attempts):
+        """ Show User attempts to login."""
+        self.login_attempts += attempts
+
+    def reset_login_attempts(self):
+       """ Reset login attempts to zero.""""
+
 
     def greet_user(self):
      """Great User"""
