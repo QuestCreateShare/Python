@@ -14,21 +14,22 @@ class User():
      print(self.age)
      print(self.account_id)
 
-    def increment_login_attempts(self, attempts):
+     def increment_login_attempts(self):
         """ Show User attempts to login."""
-        self.login_attempts += attempts
+        self.login_attempts += 1
 
-    def reset_login_attempts(self):
-       """ Reset login attempts to zero.""""
+     def reset_login_attempts(self):
+       """ Reset login attempts to zero."""
 
-
-    def greet_user(self):
-     """Great User"""
+     def greet_user(self):
+      """Great User"""
      print("\nHello " + self.first_name.title() + " " + self.last_name.title()
       + " nice to meet you" + ".")
 
 user = User('John','Tovar', 123, 9)
 user.describe_user()
+user.increment_login_attempts()
+user.login_attempts()
 user.greet_user()
 
 print("\nUser: " + user.first_name.title() + " " + user.last_name + ".")
