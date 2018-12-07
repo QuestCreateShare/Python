@@ -16,11 +16,11 @@ class User():
 
      def increment_login_attempts(self):
         """ Show User attempts to login."""
-        self.login_attempts += 1
+        self.login_attempts +1
 
-     def reset_login_attempts(self):
+     def reset_login_attempts(self,attempts):
        """ Reset login attempts to zero."""
-
+              
      def greet_user(self):
       """Great User"""
      print("\nHello " + self.first_name.title() + " " + self.last_name.title()
