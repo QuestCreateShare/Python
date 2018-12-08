@@ -644,3 +644,13 @@ from the parent class.
 Let’s add an attribute that’s specific to electric cars (a battery, for
 example) and a method to report on this attribute. We’ll store the battery
 size and write a method that prints a description of the battery
+
+Overriding Methods from the Parent Class
+You can override any method from the parent class that doesn’t fit what
+you’re trying to model with the child class. To do this, you define a method
+in the child class with the same name as the method you want to override
+in the parent class. Python will disregard the parent class method and only
+pay attention to the method you define in the child class.
+Say the class Car had a method called fill_gas_tank(). This method is
+meaningless for an all-electric vehicle, so you might want to override this
+method. Here’s one way to do that:

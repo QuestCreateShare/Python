@@ -32,8 +32,13 @@ class Car():
         """Add the given amount to the odometer reading."""
         self.odometer_reading += miles
 
+    def fill_gas_tank():
+       """Electric cars don't have gas tanks."""
+       print("This car doesn't need a gas tank!")
+
 class ElectricCar(Car):
     """Represent aspects of a car, specific to electric vehicles"""
+
 
     def __init__(self, make, model, year):
        """
@@ -47,10 +52,15 @@ class ElectricCar(Car):
         """Print a statement describing the battery size."""
         print("This car has a " + str(self.battery_size) + " -KWh battery.")
 
+    def fill_gas_tank():
+        """Electric cars don't have gas tanks."""
+        print("This car doesn't need a gas tank!")
+
 
 my_tesla = ElectricCar('tesla', ' model s', 2016)
 print(my_tesla.get_descriptive_name())
 my_tesla.describe_battery()
+my_tesla.fill_gas_tank()
 
 my_used_car = Car('subaru', 'outback', 2013)
 print(my_used_car.get_descriptive_name())
