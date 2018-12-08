@@ -636,3 +636,11 @@ we wrote earlier. Then we’ll only have to write code for the attributes and
 behavior specific to electric cars.
 Let’s start by making a simple version of the ElectricCar class, which
 does everything the Car class does:
+
+Defining Attributes and Methods for the Child Class
+Once you have a child class that inherits from a parent class, you can add
+any new attributes and methods necessary to differentiate the child class
+from the parent class.
+Let’s add an attribute that’s specific to electric cars (a battery, for
+example) and a method to report on this attribute. We’ll store the battery
+size and write a method that prints a description of the battery
