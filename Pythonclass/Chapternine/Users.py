@@ -8,30 +8,34 @@ class User():
      self.account_id = account_id
      self.login_attempts = 0
 
-    def describe_user(self):
-     """Describe user"""
+     def describe_user(self):
+      """Describe user"""
      print(self.first_name.title() + self.last_name.title())
      print(self.age)
      print(self.account_id)
 
      def increment_login_attempts(self):
-        """ Show User attempts to login."""
-           self.login_attempts +1
+      """ Show User attempts to login."""
+        self.login_attempts = +1
 
      def reset_login_attempts(self,attempts):
        """ Reset login attempts to zero."""
-              self.attempts = 0
+       self.attempts = 0
 
      def greet_user(self):
-      """Great User"""
+       """Great User"""
      print("\nHello " + self.first_name.title() + " " + self.last_name.title()
       + " nice to meet you" + ".")
 
 user = User('John','Tovar', 123, 9)
 user.describe_user()
-user.increment_login_attempts()
+user.increment_login_attempts(10)
+
+user.reset_login_attempts()
 user.login_attempts()
+
 user.greet_user()
+
 
 print("\nUser: " + user.first_name.title() + " " + user.last_name + ".")
 print("\nUser is " + str( user.age) + " years old.")
