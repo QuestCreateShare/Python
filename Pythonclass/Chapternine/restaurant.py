@@ -22,6 +22,15 @@ class Restaurant ():
       """ The Restaurant is open"""
       print(self.restaurant_name.title() + " is now open for business!")
 
+class IceCreamStand():
+    """ Simple description an Ice cream chain."""
+
+    def __init__(self, make, model, year):
+       """
+       Initialize attributes of the parent class.
+       The Initialize attributes specific to an electric car
+       """
+       super().__init__(make,model, year)
 
 restaurant = Restaurant('Hi',' Japanese')
 restaurant.describe_restaurant()
