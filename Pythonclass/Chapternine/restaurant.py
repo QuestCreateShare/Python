@@ -25,12 +25,12 @@ class Restaurant ():
 class IceCreamStand():
     """ Simple description an Ice cream chain."""
 
-    def __init__(self, make, model, year):
+    def __init__(self, restaurant_name , cuisine_type):
        """
        Initialize attributes of the parent class.
-       The Initialize attributes specific to an electric car
+       The Initialize attributes specific to ice cream stand.
        """
-       super().__init__(make,model, year)
+       super().__init__(self, restaurant_name , cuisine_type)
 
 restaurant = Restaurant('Hi',' Japanese')
 restaurant.describe_restaurant()
