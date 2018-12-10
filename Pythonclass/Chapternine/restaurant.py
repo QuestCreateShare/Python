@@ -25,12 +25,24 @@ class Restaurant ():
 class IceCreamStand():
     """ Simple description an Ice cream chain."""
 
+
     def __init__(self, restaurant_name , cuisine_type):
        """
        Initialize attributes of the parent class.
        The Initialize attributes specific to ice cream stand.
        """
-       super().__init__(self, restaurant_name , cuisine_type)
+
+     super().__init__( restaurant_name, cuisine_type)
+           self.flavors = flavors
+
+   def describe_flavors(self, flavors):
+        """Ice cream flavors"""
+        print("Ice cream flavors offered:" + self.flavors)
+
+my_restaurant = IceCreamStand('ice cream', 'many flavors')
+print(my_restaurant.get_descriptive_name())
+print(describe_flavors('chocolate'))
+
 
 restaurant = Restaurant('Hi',' Japanese')
 restaurant.describe_restaurant()
