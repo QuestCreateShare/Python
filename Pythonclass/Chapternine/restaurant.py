@@ -18,11 +18,12 @@ class Restaurant ():
         """ Add number of served guest to number served"""
         self.number_served += served
 
+
     def  open_restaurant(self):
       """ The Restaurant is open"""
       print(self.restaurant_name.title() + " is now open for business!")
 
-class IceCreamStand():
+class IceCreamStand(Restaurant):
     """ Simple description an Ice cream chain."""
 
 
@@ -32,10 +33,11 @@ class IceCreamStand():
        The Initialize attributes specific to ice cream stand.
        """
 
-     super().__init__( restaurant_name, cuisine_type)
-           self.flavors = flavors
+       super().__init__( restaurant_name, cuisine_type, flavors)
+       self.flavors = flavors
 
-   def describe_flavors(self, flavors):
+
+    def describe_flavors(self, flavors):
         """Ice cream flavors"""
         print("Ice cream flavors offered:" + self.flavors)
 
