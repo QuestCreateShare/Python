@@ -27,6 +27,9 @@ class User():
         """Great User"""
         print("\nHello " + self.first_name.title() + " " + self.last_name.title()
         + " nice to meet you" + ".")
+class admin(User):
+  "ALL MIGHTY ADMIN"
+  
 
 user = User('John','Tovar', 123, 9)
 user.describe_user()
