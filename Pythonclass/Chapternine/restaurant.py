@@ -44,8 +44,8 @@ class IceCreamStand(Restaurant):
         print("Ice cream flavors offered:" + str(self.flavors))
 
 my_restaurant = IceCreamStand('ice cream', 'many flavors')
-print(my_restaurant.describe_restaurant())
-print(my_restaurant.describe_flavors())
+my_restaurant.describe_restaurant()
+my_restaurant.describe_flavors() 
 
 
 restaurant = Restaurant('Hi',' Japanese')
