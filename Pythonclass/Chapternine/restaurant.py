@@ -33,17 +33,19 @@ class IceCreamStand(Restaurant):
        The Initialize attributes specific to ice cream stand.
        """
 
-       super().__init__( restaurant_name, cuisine_type, flavors)
+       super().__init__(restaurant_name, cuisine_type,)
+       flavors = ['chocolate', 'strawberry', 'mango', 'lemon']
        self.flavors = flavors
 
 
-    def describe_flavors(self, flavors):
+
+    def describe_flavors(self):
         """Ice cream flavors"""
-        print("Ice cream flavors offered:" + self.flavors)
+        print("Ice cream flavors offered:" + str(self.flavors))
 
 my_restaurant = IceCreamStand('ice cream', 'many flavors')
-print(my_restaurant.get_descriptive_name())
-print(describe_flavors('chocolate'))
+print(my_restaurant.describe_restaurant())
+print(my_restaurant.describe_flavors())
 
 
 restaurant = Restaurant('Hi',' Japanese')
