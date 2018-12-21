@@ -29,7 +29,18 @@ class User():
         + " nice to meet you" + ".")
 class admin(User):
   "ALL MIGHTY ADMIN"
-  
+  def __init__(self,first_name, last_name, age, account_id):
+      """ Initialize first and last name attributes"""
+
+      super().__init__(first_name, last_name, age, account_id)
+        self.privileges = []
+
+
+        def show_privileges(self):
+            """ Show admin privileges"""
+            
+
+
 
 user = User('John','Tovar', 123, 9)
 user.describe_user()
@@ -52,3 +63,6 @@ user.greet_user()
 print("\nUser: " + user.first_name.title() + " " + user.last_name + ".")
 print("\nUser is " + str( user.age) + " years old.")
 print("\nUser's ID is: " + str(user.account_id))
+
+user = User('Oscar', 'Is Over 9000!', 29, 99999)
+user.greet_user()
