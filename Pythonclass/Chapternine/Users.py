@@ -38,7 +38,7 @@ class admin(User):
 
         def show_privileges(self):
             """ Show admin privileges"""
-            
+            print("Admin has the following privileges:")
 
 
 
