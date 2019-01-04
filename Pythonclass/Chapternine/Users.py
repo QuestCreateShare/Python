@@ -27,20 +27,25 @@ class User():
         """Great User"""
         print("\nHello " + self.first_name.title() + " " + self.last_name.title()
         + " nice to meet you" + ".")
-class admin(User):
-  "ALL MIGHTY ADMIN"
-  def __init__(self,first_name, last_name, age, account_id):
-      """ Initialize first and last name attributes"""
 
-      super().__init__(first_name, last_name, age, account_id)
-        self.privileges = []
+class Admin(User):
+    "ALL MIGHTY ADMIN"
+    def __init__(self,first_name, last_name, age, account_id):
+        """ Initialize first and last name attributes"""
 
-
-        def show_privileges(self):
-            """ Show admin privileges"""
-            print("Admin has the following privileges:")
+        super().__init__(first_name, last_name, age, account_id)
+        self.privileges = ['can add post', 'can delete post', 'can ban users']
 
 
+    def show_privileges(self):
+        """ Show admin privileges"""
+        print("Admin has the following privileges:")
+        for priv in self.privileges:
+            print(priv)
+
+
+admin = Admin('Bob', 'Saul', ' 24', '198')
+admin.show_privileges()
 
 user = User('John','Tovar', 123, 9)
 user.describe_user()
