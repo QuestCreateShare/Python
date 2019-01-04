@@ -43,6 +43,9 @@ class Admin(User):
         for priv in self.privileges:
             print(priv)
 
+class Privileges():
+
+
 
 admin = Admin('Bob', 'Saul', ' 24', '198')
 admin.show_privileges()
