@@ -49,7 +49,7 @@ class Battery():
 
     def upgrade_battery(self):
         """Upgrade Battery"""
-        self.battery_size = battery_size
+        self.battery_size = 70
 
     def get_range(self):
         """Print a statement about the range this battery provides."""
