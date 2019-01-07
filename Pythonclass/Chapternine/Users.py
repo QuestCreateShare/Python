@@ -34,8 +34,7 @@ class Admin(User):
         """ Initialize first and last name attributes"""
 
         super().__init__(first_name, last_name, age, account_id)
-        self.privileges = ['can add post', 'can delete post', 'can ban users']
-
+        self.privileges = privileges()
 
     def show_privileges(self):
         """ Show admin privileges"""
@@ -62,8 +61,8 @@ class Privileges():
      for priv in self.privileges:
        print(priv)
 
-priv = Privileges('shawn', 'tarver')
-priv.show_privileges()
+admin = Privileges('shawn', 'tarver')
+admin.show_privileges()
 
 
 admin = Admin('Bob', 'Saul', ' 24', '198')
