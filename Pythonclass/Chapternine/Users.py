@@ -44,7 +44,21 @@ class Admin(User):
             print(priv)
 
 class Privileges():
+   """ I got none """
+def __init__(self, first_name, last_name, privileges):
+    """Initialize privileges"""
+    self.first_name = first_name
+    self.last_name  = last_name
+    self.privileges = ['I got none', ' White privilege', ' HA!']
 
+def show_privileges(self):
+    """ Show privileges"""
+    print(" \nI " + first_name.title() + " " + last_name.title() + " have the following privileges:")
+    for priv in self.privileges:
+      print(priv)
+
+priv = Privileges()
+priv.show_privileges()
 
 
 admin = Admin('Bob', 'Saul', ' 24', '198')
