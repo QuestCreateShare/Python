@@ -46,6 +46,11 @@ class Battery():
     def describe_battery(self):
         """Print a statement describing the battery size."""
         print("This car has a " + str(self.battery_size) + "-KWh battery.")
+
+    def upgrade_battery(self):
+        """Upgrade Battery"""
+        self.battery_size = battery_size
+
     def get_range(self):
         """Print a statement about the range this battery provides."""
         if self.battery_size == 70:
@@ -72,6 +77,8 @@ class ElectricCar(Car):
     def describe_battery(self):
         """Print a statement describing the battery size."""
         print("This car has a " + str(self.battery_size) + " -KWh battery.")
+
+
 
     def fill_gas_tank(self, fill_gas_tank):
         """Electric cars don't have gas tanks."""
