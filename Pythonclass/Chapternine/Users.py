@@ -45,19 +45,24 @@ class Admin(User):
 
 class Privileges():
    """ I got none """
-def __init__(self, first_name, last_name, privileges):
-    """Initialize privileges"""
-    self.first_name = first_name
-    self.last_name  = last_name
-    self.privileges = ['I got none', ' White privilege', ' HA!']
+   def __init__(self, first_name, last_name,):
+     """Initialize privileges"""
+     self.first_name = first_name
+     self.last_name  = last_name
+     self.privileges = ['I got none', ' White privilege', ' HA!']
 
-def show_privileges(self):
-    """ Show privileges"""
-    print(" \nI " + first_name.title() + " " + last_name.title() + " have the following privileges:")
-    for priv in self.privileges:
-      print(priv)
 
-priv = Privileges()
+   def describe_privileges(self, first_name, last_name):
+      """Describe privileges"""
+      print(self.first_name.title() + self.last_name.title())
+
+   def show_privileges(self):
+     """ Show privileges"""
+     print(" \nI " + self.first_name.title() + " " + self.last_name.title() + " have the following privileges:")
+     for priv in self.privileges:
+       print(priv)
+
+priv = Privileges('shawn', 'tarver')
 priv.show_privileges()
 
 
