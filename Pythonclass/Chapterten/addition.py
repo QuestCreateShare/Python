@@ -1,3 +1,11 @@
+#Using a try exception without a while loop.
+try:
+   print(10 + "Hello")
+except TypeError:
+    print("You can't add strings and intergers")
+
+
+
 #Write a program that prevent you from seeing an error.
 #When you try to add a string and a interger
 
